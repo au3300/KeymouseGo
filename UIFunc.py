@@ -27,9 +27,7 @@ from KeymouseGo import to_abs_path
 mutex = QMutex()
 cond = QWaitCondition()
 
-os.environ['QT_ENABLE_HIGHDPI_SCALING'] = "1"
-QCoreApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True)
-
+os.environ['QT_ENABLE_HIGHDPI_SCALING'] = "0"
 if platform.system() == 'Windows':
     HOT_KEYS = ['F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12',
                 'XButton1', 'XButton2', 'Middle']
