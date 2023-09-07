@@ -44,19 +44,8 @@ def resize_layout(ui, ratio_w, ratio_h):
 
 def main():
 
-    # 适应高DPI
-    if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
-        QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
-    if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
-        QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
-
     app = QApplication(sys.argv)
     ui = UIFunc.UIFunc(app)
-    # 不同分辨率下调节字体大小和窗口大小
-    ratio_w = SW / 1920
-    ratio_h = SH / 1080
-    if ratio_w > 1 and ratio_h > 1:
-        resize_layout(ui, ratio_w, ratio_h)
 
     ui.setFixedSize(ui.width(), ui.height())
     ui.show()
