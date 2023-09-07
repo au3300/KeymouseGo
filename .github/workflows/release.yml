@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 env:
-  keymousego-version: _v5_1_1
+  keymousego-version: -V5.1.1
 
 jobs:
   build-windows:
@@ -32,7 +32,7 @@ jobs:
           pyinstaller -Fw --add-data './assets;assets' KeymouseGo.py
       - name: Copy artifact
         run: |
-          mkdir artifact && mv dist/KeymouseGo.exe ./artifact/KeymouseGo${{ env.keymousego-version }}-win.exe
+          mkdir artifact && mv dist/KeymouseGo.exe ./artifact/KeymouseGo${{ env.keymousego-version }}.exe
       - name: Artifact
         uses: actions/upload-artifact@main
         with:
